@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from .models import Person
 from .forms import PersonForm
-from ldap import search_by_user
+from ldap import search_by_user, search_by_comp
 
 
 # Create your views here.
@@ -41,17 +40,19 @@ def hostresult(request):
     if f.is_valid():
         data = f.cleaned_data
         field = str(data['name'])
-        search_by_user(field)
-        out_arr = []
-        out_result = open('www\\modules\\out.txt', 'r')
-        for i in out_result:
-            out_arr.append(i.strip('\n'))
-
-        length = int(len(out_arr))
+        try:
+            user = str(search_by_comp(field)[0])
+            search_by_user(user.split('\\')[1])
+            out_arr = []
+            out_result = open('www\\modules\\out.txt', 'r')
+            for i in out_result:
+                out_arr.append(i.strip('\n'))
+        except:
+            out_arr = ["User is offline"]
 
     return render(request, 'response.html', {'name': field,
-                                             'response': out_arr,
-                                             'arr_length' : length,
+                                             'response' : out_arr,
+                                             'arr_length': 2,
                                              'more': "/host"
                                              })
 

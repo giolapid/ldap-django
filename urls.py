@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^ldap/$', views.ldap, name="ldap"),
     url(r'^host/$', views.host, name="host"),
     url(r'^ldap/result/$', views.ldapresult, name="ldap_result"),
+    url(r'^host/result/$', views.hostresult, name="host_result")
 ]

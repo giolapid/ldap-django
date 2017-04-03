@@ -4,10 +4,11 @@
 
 {% block sidebar %}
     <p>LDAP Search<p>
-    <a href="{{ more }}">Host Search</a>
+    <a href="/host">Host Search</a>
 {% endblock %}
 
 {% block content %}
+<h2>LDAP</h2>
 <form enctype="multipart/form-data" action="result/" method="post">
          {% csrf_token %}
          {{ form.as_p}}
