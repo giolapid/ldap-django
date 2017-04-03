@@ -1,9 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}LDAP Search{% endblock %}
+{% block title %}{{ name }}{% endblock %}
 
-{% block sidebar %}<p>LDAP Search<p>{% endblock %}
+{% block sidebar %} <a href="/ldap">Another query</a>{% endblock %}
 
 {% block content %}
-    <p>{{ response }}</p>
+    <h1>{{ name }}</h1>
+    {% if arr_length == 0 %}
+        <p>User not found</p>
+    {% else %}
+        {% for i in response %}
+            <h3>{{ i }}</h3>
+        {% endfor %}
+    {% endif %}
+
 {% endblock %}

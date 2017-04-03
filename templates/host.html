@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Host Search{% endblock %}
+
+{% block sidebar %}
+    <p>Host Search<p>
+    <a href="/ldap">LDAP Search</a>
+{% endblock %}
+
+{% block content %}
+<form enctype="multipart/form-data" action="result/" method="post">
+         {% csrf_token %}
+         {{ form.as_p}}
+          <input type="submit" value="Submit" />
+</form>
+{% endblock %}
+
