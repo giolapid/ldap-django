@@ -1,21 +1,24 @@
 {% extends "base.html" %}
-
 {% block title %}{{ name }}{% endblock %}
-
 {% block content %}
       <div class="container-fluid">
-        <div class="col-md-4"></div>
-        <div class="col-md-4" id="content">
-            <img src="../static/img/Albertsons_logo.png" alt="Albertsons Logo" height="59" width="230">
-             <h1>{{ name }}</h1>
-            {% if arr_length == 0 %}
-                <p>User not found</p>
-            {% else %}
+          <div class="col-md-3 res"></div>
+          <div class="col-md-6" id="content">
+              <img src="../static/img/Albertsons_logo.png" alt="Albertsons Logo" height="59" width="230">
+              {% if arr_length == 0 %}
+                <ul>User not found</ul>
+              {% else %}
+                <h4>Results:</h4>
                 {% for i in response %}
-                    <h3>{{ i }}</h3>
+                    <ul>{{ i }}</ul>
                 {% endfor %}
-            {% endif %}
-        </div>
-        <div class="col-md-4"></div>
-    </div>
+                {% endif %}
+              <p>
+              </p>
+              <a href="/" class="btn btn-primary btn-default btn-danger"><span class="glyphicon glyphicon-step-backward">
+              </span>Go Back</a>
+            </div>
+          <div class="col-md-3 res"></div>
+
+      </div>
 {% endblock %}

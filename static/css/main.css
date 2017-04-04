@@ -1,14 +1,29 @@
 body{
-    padding: 40px;
+    padding: 100px 40px 0px 40px;
     background: #42b3f4;
     height: 100%;
 }
 
 .col-md-3,
-.col-md-4{
+.col-md-4,
+.col-md-6{
     background: white;
-    padding: 50px;
     border-radius: 25px;
+    padding: 50px 40px 50px 40px;
+    border: 50px
     text-align: center
 }
 
+.res{
+    background: #42b3f4;
+}
+
+.btn{
+    margin: 40px 20px 40px 20px;
+}
+
+img{
+    display:block;
+    margin: 0px auto 50px auto;
+
+}
