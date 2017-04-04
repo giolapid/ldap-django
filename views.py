@@ -8,19 +8,11 @@ def index(request):
     form = PersonForm()
     return render(request, 'index.html', {'form' : form})
 
-def ldap(request):
-    form = PersonForm()
-    return render(request, 'ldap.html', {'form': form})
-
-def host(request):
-    form = PersonForm()
-    return render(request, 'host.html', {'form': form})
-
 def ldapresult(request):
     f = PersonForm(request.POST)
     if f.is_valid():
         data = f.cleaned_data
-        field = str(data['name'])
+        field = str(data['input'])
         search_by_user(field)
         out_arr = []
         out_result = open('www\\modules\\out.txt', 'r')
@@ -31,15 +23,14 @@ def ldapresult(request):
 
     return render(request, 'response.html', {'name': field,
                                              'response': out_arr,
-                                             'arr_length' : length,
-                                             'more' : "/ldap"
+                                             'arr_length' : length
                                              })
 
 def hostresult(request):
     f = PersonForm(request.POST)
     if f.is_valid():
         data = f.cleaned_data
-        field = str(data['name'])
+        field = str(data['input'])
         try:
             user = str(search_by_comp(field)[0])
             search_by_user(user.split('\\')[1])
@@ -52,8 +43,7 @@ def hostresult(request):
 
     return render(request, 'response.html', {'name': field,
                                              'response' : out_arr,
-                                             'arr_length': 2,
-                                             'more': "/host"
+                                             'arr_length': 2
                                              })
 
 

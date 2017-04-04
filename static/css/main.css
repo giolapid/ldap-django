@@ -1,0 +1,9 @@
+body{
+    background: #42b3f4;
+}
+
+.col-md-3,
+.col-md-4{
+    background: white;
+    border-radius: 25px;
+}

@@ -1,1 +1,7 @@
-Connecting to Registry of \\ggg...                                                                              Error opening HKEY_USERS for \\ggg
+dn: uid=GLAPI02,ou=people,o=safeway.com
+cn: Gio Lapid
+title: Info Security Analyst III
+mail: Gio.Lapid@safeway.com
+telephoneNumber: +1-925-226-5576
+mobile: +14159397646
+manager: uid=PBARR23,ou=people,o=safeway.com

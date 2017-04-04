@@ -1,13 +1,29 @@
 {% extends "base.html" %}
-
 {% block title %}LDAP|Host Search{% endblock %}
-
-{% block sidebar %}
-    <a href="/ldap">LDAP Search</a>
-    <a href="/host">Host Search</a>
-{% endblock %}
-
 {% block content %}
-    <p>Please pick an option from the sidebar</p>
+     <div class="container-fluid">
+         <div class="col-md-3">
+             <h2>Hostname or IP Address</h2>
+             <form enctype="multipart/form-data" action="host_result/" method="post">
+                 {% csrf_token %}
+                 {{ form.as_p}}
+                 <input type="submit" value="Submit" />
+             </form>
+         </div>
+         <div class="col-md-1"></div>
+         <div class="col-md-4">
+             <img src="../static/img/Albertsons_logo.png" alt="Albertsons Logo" height="59" width="230">
+             <p>text here</p>
+         </div>
+         <div class="col-md-1"></div>
+         <div class="col-md-3">
+             <h2>LDAP</h2>
+             <form enctype="multipart/form-data" action="ldap_result/" method="post">
+                 {% csrf_token %}
+                 {{ form.as_p}}
+                 <input type="submit" value="Submit" />
+             </form>
+         </div>
+     </div>
 {% endblock %}
 

@@ -2,16 +2,20 @@
 
 {% block title %}{{ name }}{% endblock %}
 
-{% block sidebar %} <a href="{{more}}">Another query</a>{% endblock %}
-
 {% block content %}
-    <h1>{{ name }}</h1>
-    {% if arr_length == 0 %}
-        <p>User not found</p>
-    {% else %}
-        {% for i in response %}
-            <h3>{{ i }}</h3>
-        {% endfor %}
-    {% endif %}
-
+      <div class="container-fluid">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" id="content">
+            <img src="../static/img/Albertsons_logo.png" alt="Albertsons Logo" height="59" width="230">
+             <h1>{{ name }}</h1>
+            {% if arr_length == 0 %}
+                <p>User not found</p>
+            {% else %}
+                {% for i in response %}
+                    <h3>{{ i }}</h3>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col-md-4"></div>
+    </div>
 {% endblock %}
