@@ -3,7 +3,7 @@
 {% block content %}
      <div class="container-fluid">
          <div class="col-md-3">
-             <h2>Hostname or IP Address</h2>
+             <h3>Hostname or IP Address</h3>
              <form enctype="multipart/form-data" action="host_result/" method="post">
                  {% csrf_token %}
                  {{ form.as_p}}
@@ -17,7 +17,7 @@
          </div>
          <div class="col-md-1"></div>
          <div class="col-md-3">
-             <h2>LDAP</h2>
+             <h3>LDAP</h3>
              <form enctype="multipart/form-data" action="ldap_result/" method="post">
                  {% csrf_token %}
                  {{ form.as_p}}
