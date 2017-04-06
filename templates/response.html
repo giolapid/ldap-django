@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}{{ name }}{% endblock %}
 {% block content %}
       <div class="container-fluid">
           <div class="col-md-3 res"></div>
           <div class="col-md-6" id="content">
-              <img src="../static/img/Albertsons_logo.png" alt="Albertsons Logo" height="59" width="230">
+              <img src="{% static "img/Albertsons_logo.png" %}" alt="Albertsons Logo" height="59" width="230">
               {% if arr_length == 0 %}
                 <ul>User not found</ul>
               {% else %}

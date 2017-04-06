@@ -1,0 +1,7 @@
+dn: uid=rgar215,ou=people,o=safeway.com
+cn: Ron Garcia
+title: Information Security Engineer
+mail: Ron.Garcia@safeway.com
+telephoneNumber: +1-925-226-5393
+mobile: +1-510-736-6439
+manager: uid=PBARR23,ou=people,o=safeway.com

@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}LDAP|Host Search{% endblock %}
 {% block content %}
 <div class="container-fluid" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
          <div class="col-md-3">
              <h4>Hostname | IP Address</h4>
-             <form enctype="multipart/form-data" action="host_result/" method="post">
+             <form enctype="multipart/form-data" action="{% url 'www:host_result' %}" method="post">
                  {% csrf_token %}
                  {{ form.as_p}}
                  <button type="submit" class="btn btn-primary btn-success" value="Submit" />
@@ -13,16 +14,16 @@
          </div>
          <div class="col-md-1"></div>
          <div class="col-md-4">
-             <img src="../static/img/Albertsons_logo.png" alt="Albertsons Logo" height="59" width="230">
+             <img src="{% static "img/Albertsons_logo.png" %}" alt="Albertsons Logo" height="59" width="230">
              <p style="font-weight: bold;"><span class="glyphicon glyphicon-info-sign"></span>ATTENTION:</p>
-             <p>This is a private system for use by authorized Safeway Inc. employees only.</p>
+             <p>This is a private system for use by authorized Albertsons Inc. employees only.</p>
              <p>All access to this system is monitored and any abuse or unauthorized access
                  will be prosecuted to the full extent the laws of the United States of America will allow.</p>
          </div>
          <div class="col-md-1"></div>
          <div class="col-md-3">
              <h4>LDAP</h4>
-             <form enctype="multipart/form-data" action="ldap_result/" method="post">
+             <form enctype="multipart/form-data" action="{% url 'www:ldap_result' %}" method="post">
                  {% csrf_token %}
                  {{ form.as_p}}
                  <button type="submit" class="btn btn-primary btn-success"/>

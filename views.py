@@ -15,7 +15,7 @@ def ldapresult(request):
         field = str(data['input'])
         search_by_user(field)
         out_arr = []
-        out_result = open('www\\modules\\out.txt', 'r')
+        out_result = open('www\\static\\modules\\out.txt', 'r')
         for i in out_result:
             out_arr.append(i.strip('\n'))
 
@@ -35,7 +35,7 @@ def hostresult(request):
             user = str(search_by_comp(field)[0])
             search_by_user(user.split('\\')[1])
             out_arr = []
-            out_result = open('www\\modules\\out.txt', 'r')
+            out_result = open('www\\static\\modules\\out.txt', 'r')
             for i in out_result:
                 out_arr.append(i.strip('\n'))
         except:
